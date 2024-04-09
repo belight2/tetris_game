@@ -190,8 +190,8 @@ int Game::cal_shadow_y(){
     // 테트로미노가 있어야할 위치에 이미 블럭이 있거나
     // 보드판의 높이를 벗어날 경우, 그 이전 위치를 반환한다.
     // 잘못된 메모리 접근 방지를 위해 보드판 높이 검사를 먼저 한다.
-    if(j + shadow > BOARD_HEIGHT || board_[i + current_x - 1][j + shadow_height - 1])
-      return dest_height - 1;
+    if(j + shadow_height > BOARD_HEIGHT || board_[i + current_x - 1][j + shadow_height - 1])
+      return shadow_height - 1;
   }  
   // 이 값이 반환되면 현재 놓을 수 없다는 뜻이 됨
   return -1;
